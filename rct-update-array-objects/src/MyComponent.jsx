@@ -9,7 +9,22 @@ function MyComponent() {
     const [carYear, setCarYear] = useState(new Date().getFullYear());
     const [carMake, setCarMake] = useState("");
     const [carModel, setCarModel] = useState("");
+    /* we need five handler functions to work with */
+    function handleAddCar() {
 
+    }
+    function handleRemoveCar(index) {
+
+    }
+    function handleCarYearChange() {
+
+    }
+    function handleCarMakeChange() {
+
+    }
+    function handleCarModelChange() {
+
+    }
     return(
         <div> 
             <h2> list of car objects</h2>
