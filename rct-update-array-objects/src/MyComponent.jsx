@@ -16,14 +16,14 @@ function MyComponent() {
     function handleRemoveCar(index) {
 
     }
-    function handleCarYearChange() {
-
+    function handleCarYearChange(event) {
+        setCarYear(event.target.value);
     }
-    function handleCarMakeChange() {
-
+    function handleCarMakeChange(event) {
+        setCarMake(event.target.value);
     }
-    function handleCarModelChange() {
-
+    function handleCarModelChange(event) {
+        setCarModel(event.target.value);
     }
     return(
         <div> 
@@ -32,11 +32,14 @@ function MyComponent() {
 
             </ul>
             <input type="number" 
-                   value={carYear} /> <br />
+                   value={carYear}
+                   onChange={handleCarYearChange} /> <br />
             <input type="text" 
-                   value={carMake} /> <br />
+                   value={carMake} 
+                   onChange={handleCarMakeChange} /> <br />
             <input type="text"
-                    value={carModel} /> <br />
+                    value={carModel}
+                    onChange={handleCarModelChange} /> <br />
             <button> add car </button>
         </div>
     );
