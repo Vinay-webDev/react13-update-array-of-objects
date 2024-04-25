@@ -11,7 +11,11 @@ function MyComponent() {
     const [carModel, setCarModel] = useState("");
     /* we need five handler functions to work with */
     function handleAddCar() {
-
+        /* it's not that complicated as you might expect */
+        const newCar = {year: carYear,
+                        make: carMake,
+                        model: carModel};
+        setCars(c => [...c, newCar])
     }
     function handleRemoveCar(index) {
 
@@ -29,7 +33,7 @@ function MyComponent() {
         <div> 
             <h2> list of car objects</h2>
             <ul> 
-
+                {cars.map((car, index) => <li key={index} > {car.year} {car.make} {car.model} </li>)}
             </ul>
             <input type="number" 
                    value={carYear}
@@ -40,7 +44,7 @@ function MyComponent() {
             <input type="text"
                     value={carModel}
                     onChange={handleCarModelChange} /> <br />
-            <button> add car </button>
+            <button onClick={handleAddCar} > add car </button>
         </div>
     );
 }
